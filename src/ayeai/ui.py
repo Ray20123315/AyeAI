@@ -17,6 +17,9 @@ from .pipeline import JobRunner, control_job
 from .state import StateError, StateStore
 
 
+_STARTUP_NOTICE_PENDING = bool(getattr(sys, "frozen", False))
+
+
 def menu_move(index: int, key: str, size: int) -> int:
     """Return the next horizontal menu index; kept pure for deterministic tests."""
 
@@ -37,6 +40,11 @@ def _enable_ansi() -> None:
 
 
 def _clear_screen() -> None:
+    if os.name == "nt":
+        # Some Windows terminals do not interpret VT/ANSI sequences.  Use
+        # the native console command so arrow-key redraws never accumulate.
+        os.system("cls")
+        return
     sys.stdout.write("\x1b[2J\x1b[H")
     sys.stdout.flush()
 
@@ -87,7 +95,11 @@ def select_horizontal(
         raise ValueError("menu options cannot be empty")
     index = selected % len(options)
     while True:
-        _clear_screen()
+        global _STARTUP_NOTICE_PENDING
+        if _STARTUP_NOTICE_PENDING:
+            _STARTUP_NOTICE_PENDING = False
+        else:
+            _clear_screen()
         print(tr(language, "app_title"))
         print("=" * 64)
         print(title)
