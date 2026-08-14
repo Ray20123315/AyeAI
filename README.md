@@ -230,6 +230,8 @@ doctor 會檢查 Python、FFmpeg/ffprobe、NVIDIA driver/GPU/VRAM/溫度、OpenV
 
 `AyeAI.bat` 是方便入口：沒有參數或傳入影片時進入鍵盤 UI；`--doctor`、`--benchmark`、`--status`、`--pause`、`--resume`、`--stop`、`--review` 等管理命令會保留 CLI 行為。
 
+直接雙擊 `dist\\AyeAI.exe`（不帶參數）也會進入鍵盤 UI；只有 `--help`、`--license`、`--doctor`、`--download-only` 等一次性命令完成後才會返回並關閉 console。左右鍵切換時會使用 Windows 原生 `cls` 清屏，因此畫面只保留目前選單。
+
 ### 9.2 語言
 
 支援三種語言：
@@ -364,6 +366,8 @@ Set-ExecutionPolicy -Scope Process Bypass
 
 這會把 NPU 模型改為目標電腦第一次需要時自動下載。GPU/NPU 驅動是作業系統與硬體層，不能合法或安全地封裝進 EXE；目標電腦仍須安裝相容的 NVIDIA/Intel 驅動。這是單一 EXE 能跨電腦可靠工作的必要界線。
 
+若 Windows 顯示 `was blocked by your organization's Device Guard policy`，代表本機組織政策拒絕未簽署的自建 EXE；這不是 AyeAI runtime 錯誤。請由系統管理員核准該檔案、提供受信任簽署版，或改用原始碼 `.venv`/BAT 測試；不要關閉 Device Guard。
+
 ### 9.9 嚴格授權聲明
 
 本專案使用 `LICENSE` 的 **AyeAI Proprietary Software License — All Rights Reserved**，不是 MIT、Apache、GPL，也不是 OSI 開源授權。它只明確允許一名使用者在自己控制的裝置上，以未修改 EXE 作個人、內部、非商業使用；複製、公開鏡像、修改、fork、翻譯、散布、販售、出租、再授權、逆向工程、移除聲明、提供 SaaS/代處理服務等，都需要版權持有人事前書面許可。
@@ -381,7 +385,7 @@ https://github.com/Ray20123315/AyeAI
 目前版本已驗證：
 
 - Python 原始碼 `compileall` 通過。
-- Python 測試 `13 passed`。
+- Python 測試 `15 passed`。
 - CUDA、OpenVINO NPU、CPU backend 實際 probe；長片 transcript、高光與候選 MP4 end-to-end。
 - pause/resume、Ctrl+C/強制中斷後續跑、資源退讓、損壞尾段隔離、`review_corrupt`、輸出 MP4 `ffprobe` 驗證。
 - EXE `--help` exit 0；繁中、簡中、英文 `--license` 均 exit 0 且含 GitHub link。
@@ -417,6 +421,8 @@ AyeAI 是 Windows 11 的无 GUI 本地 AI 直播剪辑 CLI：`MP4/MKV → ffprob
 ```
 
 BAT 的交互菜单使用左右方向键和 Enter，Esc 返回或退出。`--lang` 支持 `zh-TW`、`zh-CN`、`en` 与 `auto`；`auto` 会读取 `AYEAI_LANG` 或 Windows 用户地区。
+
+直接双击不带参数的 `dist\\AyeAI.exe` 会进入键盘 UI；`--help`、`--license`、`--doctor`、`--download-only` 是一次性 CLI 命令，完成后关闭 console。每次左右切换会使用 Windows 原生 `cls` 清屏，不会不断追加旧菜单。
 
 ### 10.3 自动检测与补全文件
 
@@ -487,6 +493,8 @@ The source video is always read-only. Each completed chunk is persisted to SQLit
 ```
 
 The BAT launcher opens the keyboard CLI UI. Use Left/Right to select an action, Enter to confirm, and Esc to go back or exit. `--lang` accepts `zh-TW`, `zh-CN`, `en`, and `auto`; `auto` uses `AYEAI_LANG` or the Windows user locale.
+
+Double-clicking `dist\\AyeAI.exe` without arguments also opens the keyboard UI. One-shot commands such as `--help`, `--license`, `--doctor`, and `--download-only` exit after completion, so a console window launched by double-click will close normally. Windows redraws use native `cls`, keeping only the current menu visible.
 
 ### 11.3 Hardware detection and automatic completion
 
