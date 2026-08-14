@@ -101,6 +101,25 @@ def print_result(result: Any, as_json: bool = False) -> None:
         print(result)
 
 
+def _should_default_to_ui(args: argparse.Namespace) -> bool:
+    """Make a double-clicked frozen EXE enter the keyboard UI."""
+    if not getattr(sys, "frozen", False) or args.inputs or args.ui:
+        return False
+    explicit_cli_mode = any(
+        (
+            args.doctor,
+            args.benchmark,
+            args.status,
+            args.pause,
+            args.resume,
+            args.stop,
+            args.review,
+            args.download_only,
+        )
+    )
+    return not explicit_cli_mode
+
+
 def main(argv: list[str] | None = None) -> int:
     configure_console_encoding()
     parser = build_parser()
@@ -112,6 +131,8 @@ def main(argv: list[str] | None = None) -> int:
         emit_startup_notice(language, force=args.license)
         if args.license:
             return 0
+        if _should_default_to_ui(args):
+            args.ui = True
         config = make_config(args)
         runtime_report = None
         needs_runtime = bool(args.download_only or args.doctor or args.benchmark or args.ui or args.inputs)
