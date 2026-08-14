@@ -284,7 +284,10 @@ EXE 不要求目標電腦預先安裝 Python、CUDA toolkit、OpenVINO toolkit �
 - 閒置時優先使用已通過實測的 CUDA GPU。
 - 偵測到遊戲、前景高負載、GPU/VRAM/溫度風險時，停止 GPU 接受新 chunk，保留合理 cooldown 後切換到 NPU。
 - NPU 不可用或不適合目前工作時，改用受限 CPU；CPU 使用低優先權、有限 thread 與 bounded queue。
-- 每個 chunk 完成後重新評估資源；cooldown/hyste…114 tokens truncated…c試；正式長片建議保留 `auto`。
+- 每個 chunk 完成後重新評估資源；cooldown/hysteresis 防止 CUDA、NPU、CPU 頻繁震盪。
+- 滑鼠、桌面、瀏覽器、Discord 與遊戲優先；危險的 RAM、VRAM、磁碟、溫度或負載會降速、暫停或等待，而不是吃滿 CPU。
+
+可用 `--backend auto|cuda|npu|cpu` 做診斷或固定測試；正式長片建議保留 `auto`。
 
 ### 9.5 長片、佇列、checkpoint 與續跑
 
