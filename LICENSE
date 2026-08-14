@@ -9,29 +9,41 @@ IMPORTANT: THIS IS A PROPRIETARY LICENSE, NOT AN OPEN-SOURCE LICENSE.
 1. Ownership
 The AyeAI source code, executable builds, original documentation, build
 scripts, configuration, and original artwork (collectively, the “Software”)
-are owned by the copyright holder. All rights not expressly granted below
-are reserved.
+are owned by Ray20123315. All rights not expressly granted below are reserved.
 
 2. Limited permission
 Subject to this license, one individual may run an unmodified AyeAI executable
 for personal, internal, non-commercial use on devices they control. This is a
 revocable, non-exclusive, non-transferable, non-sublicensable permission.
 
+NO RIGHT TO EDIT OR MODIFY IS GRANTED BY DEFAULT. Any editing, modification,
+adaptation, translation, patching, merging, creation of derivative works, or
+other alteration of the Software requires prior explicit written permission
+from Ray20123315.
+
 3. Prohibited acts
-Without prior written permission from the copyright holder, you may not:
+Without prior explicit written permission from Ray20123315, you may not:
   a. copy, publish, mirror, upload, or redistribute the Software or any build;
   b. sell, rent, lease, sublicense, transfer, or commercially exploit it;
-  c. modify, adapt, translate, merge, fork, or create derivative works;
+  c. edit, modify, adapt, translate, patch, merge, fork into a modified version,
+     or create derivative works based on the Software;
   d. reverse engineer, decompile, disassemble, bypass protection, or extract
      substantial parts of the Software;
   e. use it to provide a hosted, SaaS, bureau, or shared processing service;
-  f. remove copyright, license, attribution, or telemetry/notice text; or
-  g. use the name, branding, or repository to imply endorsement or affiliation.
+  f. remove or alter copyright, license, attribution, or proprietary notices;
+  g. distribute, publish, or provide any modified version or derivative work;
+     or
+  h. use the name, branding, or repository to imply endorsement or affiliation.
 
-4. Source repository
-Public visibility of the repository does not grant permission to use, copy,
-modify, or redistribute the Software. Viewing the source for evaluation and
-security review does not waive any restriction in this license.
+4. Public repository and GitHub platform rights
+Public visibility of this repository does not make the Software open source and
+does not grant permission under this license to edit, modify, adapt, translate,
+redistribute, or create derivative works.
+
+GitHub may separately provide users with limited platform rights under GitHub's
+Terms of Service, including technical repository viewing or forking features.
+Those platform rights are separate from this license and do not expand the
+permissions granted by Ray20123315 beyond what is expressly stated here.
 
 5. Third-party components and models
 The Software may bundle or download third-party components and models. They
@@ -42,7 +54,8 @@ terms applicable to your installation.
 
 6. Termination
 This permission terminates immediately if you breach this license. On
-termination, stop using the Software and delete copies under your control.
+termination, stop using the Software and delete copies under your control to
+the extent required by applicable law and this license.
 
 7. Disclaimer and limitation of liability
 THE SOFTWARE IS PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. TO THE MAXIMUM
@@ -52,14 +65,14 @@ BUSINESS-INTERRUPTION DAMAGES ARISING FROM USE OR INABILITY TO USE THE
 SOFTWARE.
 
 8. Contact and written permission
-Permission requests and commercial licensing requests must be made in writing
-through the project owner or the repository contact at:
+Permission requests, including requests to edit, modify, adapt, translate,
+fork into a modified version, create derivative works, redistribute, or use the
+Software commercially, must receive prior explicit written approval from
+Ray20123315 through the project owner or repository contact at:
 https://github.com/Ray20123315/AyeAI
 
-繁體中文摘要：本專案為「保留所有權利」的專有軟體。除未修改 EXE 的個人、內部、非商業使用外，
-未經版權持有人書面許可，不得複製、修改、散布、販售、再授權、逆向工程或提供代處理服務。
-GitHub 公開原始碼不等於授予開源使用權。第三方元件與模型仍受各自授權約束。
+繁體中文摘要：
+本專案為「保留所有權利」的專有軟體。預設不授予任何編輯、修改、改作、翻譯、合併、製作衍生作品或散布修改版本的權利；上述行為皆須事前取得 Ray20123315 的明確書面同意。公開 GitHub 原始碼不代表開源授權。GitHub 平台本身依服務條款可能提供的查看或 fork 功能，與本授權授予的權利分開計算。第三方元件與模型仍受各自授權約束。
 
-简体中文摘要：本项目为“保留所有权利”的专有软件。除未修改 EXE 的个人、内部、非商业使用外，
-未经版权持有人书面许可，不得复制、修改、分发、销售、再许可、逆向工程或提供代处理服务。
-GitHub 公开源代码不等于授予开源使用权。第三方组件与模型仍受各自许可证约束。
+简体中文摘要：
+本项目为“保留所有权利”的专有软件。默认不授予任何编辑、修改、改编、翻译、合并、制作衍生作品或分发修改版本的权利；上述行为均须事先取得 Ray20123315 的明确书面同意。公开 GitHub 源代码不代表开源授权。GitHub 平台本身依服务条款可能提供的查看或 fork 功能，与本许可证授予的权利分开计算。第三方组件与模型仍受各自许可证约束。
