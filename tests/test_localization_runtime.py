@@ -1,9 +1,11 @@
+import sys
 from pathlib import Path
 
 from ayeai.bootstrap import ensure_runtime
 from ayeai.config import RuntimeConfig
 from ayeai.i18n import normalize_language, tr
 from ayeai.license import GITHUB_URL, license_text
+from main import _should_default_to_ui, build_parser
 
 
 def test_language_normalization_and_translation() -> None:
@@ -25,3 +27,10 @@ def test_runtime_detection_uses_existing_files_without_download(tmp_path: Path, 
     report = ensure_runtime(RuntimeConfig(), auto_download=False)
     assert "capabilities" in report
     assert set(report["ready"]) >= {"ffmpeg", "faster-whisper", "openvino-npu"}
+
+
+def test_frozen_exe_defaults_to_keyboard_ui(monkeypatch) -> None:
+    monkeypatch.setattr(sys, "frozen", True, raising=False)
+    assert _should_default_to_ui(build_parser().parse_args([])) is True
+    assert _should_default_to_ui(build_parser().parse_args(["--doctor"])) is False
+    assert _should_default_to_ui(build_parser().parse_args(["--download-only"])) is False
