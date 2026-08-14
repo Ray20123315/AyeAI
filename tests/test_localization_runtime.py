@@ -22,6 +22,10 @@ def test_license_notice_contains_repository_link() -> None:
     assert GITHUB_URL in license_text("en")
 
 
+def test_license_notice_includes_bundled_license_file() -> None:
+    assert "AyeAI PROPRIETARY SOFTWARE LICENSE" in license_text("en")
+
+
 def test_runtime_detection_uses_existing_files_without_download(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setenv("AYEAI_DATA_DIR", str(tmp_path / "AyeAI-data"))
     report = ensure_runtime(RuntimeConfig(), auto_download=False)
