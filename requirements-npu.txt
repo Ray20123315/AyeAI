@@ -1,0 +1,4 @@
+openvino==2026.3.0
+openvino-genai==2026.3.0.0
+optimum-intel==1.27.0
+nncf==2.19.0
