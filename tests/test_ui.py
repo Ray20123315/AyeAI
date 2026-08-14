@@ -44,6 +44,14 @@ def test_windows_arrow_scan_code_maps_to_right(monkeypatch) -> None:
     assert ui._read_key(timeout=0.1) == "right"
 
 
+def test_windows_clear_screen_uses_native_console_command(monkeypatch) -> None:
+    calls = []
+    monkeypatch.setattr(ui.os, "name", "nt")
+    monkeypatch.setattr(ui.os, "system", calls.append)
+    ui._clear_screen()
+    assert calls == ["cls"]
+
+
 def test_run_ui_can_leave_with_right_and_enter(monkeypatch, tmp_path: Path) -> None:
     keys = iter(["right", "right", "right", "enter"])
     monkeypatch.setattr(ui, "_clear_screen", lambda: None)
