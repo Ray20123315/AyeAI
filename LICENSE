@@ -1,0 +1,65 @@
+AyeAI PROPRIETARY SOFTWARE LICENSE
+All Rights Reserved
+
+Copyright (c) 2026 Ray20123315 / AyeAI
+Project: https://github.com/Ray20123315/AyeAI
+
+IMPORTANT: THIS IS A PROPRIETARY LICENSE, NOT AN OPEN-SOURCE LICENSE.
+
+1. Ownership
+The AyeAI source code, executable builds, original documentation, build
+scripts, configuration, and original artwork (collectively, the “Software”)
+are owned by the copyright holder. All rights not expressly granted below
+are reserved.
+
+2. Limited permission
+Subject to this license, one individual may run an unmodified AyeAI executable
+for personal, internal, non-commercial use on devices they control. This is a
+revocable, non-exclusive, non-transferable, non-sublicensable permission.
+
+3. Prohibited acts
+Without prior written permission from the copyright holder, you may not:
+  a. copy, publish, mirror, upload, or redistribute the Software or any build;
+  b. sell, rent, lease, sublicense, transfer, or commercially exploit it;
+  c. modify, adapt, translate, merge, fork, or create derivative works;
+  d. reverse engineer, decompile, disassemble, bypass protection, or extract
+     substantial parts of the Software;
+  e. use it to provide a hosted, SaaS, bureau, or shared processing service;
+  f. remove copyright, license, attribution, or telemetry/notice text; or
+  g. use the name, branding, or repository to imply endorsement or affiliation.
+
+4. Source repository
+Public visibility of the repository does not grant permission to use, copy,
+modify, or redistribute the Software. Viewing the source for evaluation and
+security review does not waive any restriction in this license.
+
+5. Third-party components and models
+The Software may bundle or download third-party components and models. They
+are not relicensed by this document and remain under their respective licenses
+and terms. You are responsible for reviewing and complying with those terms,
+including any FFmpeg, Python package, CUDA, OpenVINO, Hugging Face, and model
+terms applicable to your installation.
+
+6. Termination
+This permission terminates immediately if you breach this license. On
+termination, stop using the Software and delete copies under your control.
+
+7. Disclaimer and limitation of liability
+THE SOFTWARE IS PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. TO THE MAXIMUM
+EXTENT PERMITTED BY LAW, THE COPYRIGHT HOLDER IS NOT LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, DATA-LOSS, MEDIA-LOSS, OR
+BUSINESS-INTERRUPTION DAMAGES ARISING FROM USE OR INABILITY TO USE THE
+SOFTWARE.
+
+8. Contact and written permission
+Permission requests and commercial licensing requests must be made in writing
+through the project owner or the repository contact at:
+https://github.com/Ray20123315/AyeAI
+
+繁體中文摘要：本專案為「保留所有權利」的專有軟體。除未修改 EXE 的個人、內部、非商業使用外，
+未經版權持有人書面許可，不得複製、修改、散布、販售、再授權、逆向工程或提供代處理服務。
+GitHub 公開原始碼不等於授予開源使用權。第三方元件與模型仍受各自授權約束。
+
+简体中文摘要：本项目为“保留所有权利”的专有软件。除未修改 EXE 的个人、内部、非商业使用外，
+未经版权持有人书面许可，不得复制、修改、分发、销售、再许可、逆向工程或提供代处理服务。
+GitHub 公开源代码不等于授予开源使用权。第三方组件与模型仍受各自许可证约束。
