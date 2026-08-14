@@ -1,0 +1,4 @@
+# Windows-local CUDA 12 cuBLAS DLLs for CTranslate2/faster-whisper.
+# This stays inside the project .venv; AyeAI adds the DLL directory at runtime
+# with os.add_dll_directory and never edits the user's PATH.
+nvidia-cublas-cu12==12.8.4.1
